@@ -227,7 +227,7 @@ i=i+1;
 end
 
 subplot(3,1,2);bar(bytes_f);
-str = sprintf('Plot of video trace data, random start at frame %.0f', initial_point);
+str = sprintf('Plot of trace data, random start at %.0f', initial_point);
 title(str);
 xlabel('Elements (50 frames each)');
 ylabel('Number of bytes');
@@ -247,7 +247,3 @@ end
 i=i+1;
 end
 subplot(3,1,3);bar(bytes_f);
-str = sprintf('Plot of video trace data, random start at frame %.0f', initial_point);
-title(str);
-xlabel('Elements (5 frames each)');
-ylabel('Number of bytes');

@@ -20,7 +20,12 @@ time_mean = mean(time_interval); %mean time interval in microseconds
 time_variance = var(time_interval);
 
 bit_rate_mean = 100 * 8 / (time_mean * 1e-6);
-bit_rate_variance = 100 * 8 / (time_variance * 1e-6);
- 
-disp(1/time_mean);
+bit_rate_variance = 100 * 8 / (time_mean * 1e-6);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Compute autocorrelation 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+figure
+poisson_traffic_R = autocorr(packetsize_p);
 

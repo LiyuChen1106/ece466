@@ -33,7 +33,7 @@ varience=varience/(maxsize(1,1)-1);
 
 fprintf('poisson1.data organization for mean value(in microseconds): %f\n',mean);
 fprintf('poisson1.data organization for varoemce value(in microseconds): %f\n',varience);
-bitrate=100*8*10^6/mean/(2^20);
+bitrate=100*8*10^6/mean;
 fprintf('poisson1.data organization for bit rate(in mbps): %f\n',bitrate);
 
 [packet_no_p, time_p, packetsize_p] = textread('poisson3.data', '%f %f %f');
@@ -66,5 +66,5 @@ varience=varience/(maxsize(1,1)-1);
 
 fprintf('poisson3.data organization for mean value(in microseconds): %f\n',mean);
 fprintf('poisson3.data organization for varoemce value(in microseconds): %f\n',varience);
-bitrate=100*8*10^6/mean/(2^20);
-fprintf('poisson3.data organization for bit rate(in mbps): %f\n',bitrate);
+bitrate=100*8*10^6/mean;
+fprintf('poisson3.data organization for bit rate(in mbps): %d\n',bitrate);

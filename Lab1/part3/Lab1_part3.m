@@ -33,9 +33,15 @@ fprintf('peak bit rate: %.2f \n\n',peakb);
 
 ptoaratio= peakb/meanbitR;
 fprintf('the ratio of the peak rate and the average rate: %.2f\n',ptoaratio);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure(1);
 plot(time,framesize);
+title('Packet size v.s. time');
+xlabel('Time (seconds)');
+ylabel('Packet size (bytes)');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 figure(2);
 I_dist=zeros(1,80);
 for i=1:length(framesize)
@@ -50,6 +56,9 @@ for i=1:80
     xl(i)=i*20;
 end
 bar(xl,I_dist);
+title('Distribution of packet sizes');
+xlabel('Packet size (bytes)');
+ylabel('Relative frequency');
 %%%%%%%%%%%%%%%%%%%%%%%%%Exercise %%%3.2%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The following code will generate Plot 1; You generate Plot2 , Plot3.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,8 +78,12 @@ jj=jj+1;
 end
 i=i+1;
 end
-%%%%%%%%
+
 subplot(3,1,1);bar(bytes_p);
+title('Plot of Ethernet trace data, start at 0s');
+xlabel('Elements (1 second each)');
+ylabel('Number of bytes');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 jj=1;
 i=1;
@@ -87,8 +100,13 @@ jj=jj+1;
 end
 i=i+1;
 end
-%%%%%%%%
+
 subplot(3,1,2);bar(bytes_p);
+str = sprintf('Plot of Ethernet trace data, random start at %.1fs', initial_p);
+title(str);
+xlabel('Elements (100 milliseconds each)');
+ylabel('Number of bytes');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 jj=1;
 i=1;
@@ -105,5 +123,9 @@ jj=jj+1;
 end
 i=i+1;
 end
-%%%%%%%%
+
 subplot(3,1,3);bar(bytes_p);
+str = sprintf('Plot of Ethernet trace data, random start at %.1fs', initial_p);
+title(str);
+xlabel('Elements (10 milliseconds each)');
+ylabel('Number of bytes');

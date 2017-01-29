@@ -31,8 +31,12 @@ end
 i=i+1;
 end
 
-%%%%%%%%
+
 subplot(3,1,1);bar(bytes_p);
+title('Plot of trace data, start at 0s');
+xlabel('Elements (1 second each)');
+ylabel('Number of bytes');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 start_plot2 = rand;
 maxsize=size(time_p);
@@ -59,6 +63,12 @@ i=i+1;
 end
 
 subplot(3,1,2);bar(bytes_p);
+w=initial_p/1000000;
+str = sprintf('Plot of trace data, random start at %.1fs', w);
+title(str);
+xlabel('Elements (100 milliseconds each)');
+ylabel('Number of bytes');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 start_plot3 = rand;
 maxsize=size(time_p);
@@ -85,6 +95,11 @@ i=i+1;
 end
 
 subplot(3,1,3);bar(bytes_p);
+w=initial_p/1000000;
+str = sprintf('Plot of trace data, random start at %.1fs', w);
+title(str);
+xlabel('Elements (10 milliseconds each)');
+ylabel('Number of bytes');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Note: Run the same MATLAB code for Exercise 1.3 and 1.4 but change the
 %second line of the code in order to read the files 'poisson2.data' and

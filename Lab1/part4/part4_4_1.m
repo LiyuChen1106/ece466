@@ -19,7 +19,9 @@ end
 figure(1);
 subplot(3,1,1);
 bar(autocorrelation);
-
+title('autocorrelation function');
+xlabel('LAG');
+ylabel('autocorrelation');
 [index, time, type_f, framesize_f, dummy1, dymmy2, dymmy3 ] = textread('movietrace.data', '%f %f %c %f %f %f %f');
 
 mean1 = mean(framesize_f);
@@ -35,7 +37,9 @@ end
 
 subplot(3,1,2);
 bar(autocorrelation);
-
+title('autocorrelation function');
+xlabel('LAG');
+ylabel('autocorrelation');
 
 [time1, framesize1] = textread('Bel.data', '%f %f');
 mean1 = mean(framesize1);
@@ -49,3 +53,6 @@ for i=1:5000
 end
 subplot(3,1,3);
 bar(autocorrelation);
+title('autocorrelation function');
+xlabel('LAG');
+ylabel('autocorrelation');

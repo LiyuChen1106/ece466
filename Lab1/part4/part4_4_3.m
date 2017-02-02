@@ -33,14 +33,16 @@ end
 
 figure(1);
 bar(disp1);
-
-
+title('Index of dispersion for Poisson traffic');
+xlabel('time intervel (in second)');
+ylabel('Index of dispersion');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [index, time1, type_f, framesize_f, dummy1, dymmy2, dymmy3 ] = textread('movietrace.data', '%f %f %c %f %f %f %f');
 for i=1:length(index)
     frame(index(i)+1) = framesize_f(i);
 end
 
-for i=1:1800
+for i=1:100
    g=1;
    start=1;
    g=i*30;
@@ -60,14 +62,16 @@ for i=1:1800
 end
 
 figure(2);bar(disp2);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+title('Index of dispersion for video traffic');
+xlabel('time intervel (in second)');
+ylabel('Index of dispersion');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [time2, framesize] = textread('Bel.data', '%f %f');   
 t=0;
 g=1;
 start=1;
 
-for i=1:3143
+for i=1:100
     g=1;
     start=1;
     sum3=0;
@@ -102,3 +106,6 @@ for i=1:3143
         
 end
 figure(3); bar(disp3);    
+title('Index of dispersion for Ethernet traffic');
+xlabel('time intervel (in second)');
+ylabel('Index of dispersion');

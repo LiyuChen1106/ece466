@@ -52,7 +52,10 @@ for i=1:100
 end
 figure(1);
 bar(burstiF);       
- 
+title('Burstiness function of Poisson traffic');
+xlabel('time intervel (in second)');
+ylabel('Burstiness function');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [index, time1, type_f, framesize_f, dummy1, dymmy2, dymmy3 ] = textread('movietrace.data', '%f %f %c %f %f %f %f');
 
 for i=1:length(index)
@@ -89,8 +92,10 @@ for i=1:1800
 end
 figure(2);
 bar(burstiF);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+title('Burstiness function of video traffic');
+xlabel('time intervel (in second)');
+ylabel('Burstiness function');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [time, framesize] = textread('Bel.data', '%f %f');
 sum=0;
 t=0;
@@ -141,4 +146,6 @@ for i=1:3143
 end        
 figure(3);
 bar(burstiF);
- 
+title('Burstiness function of Ethernet traffic');
+xlabel('time intervel (in second)');
+ylabel('Burstiness function');

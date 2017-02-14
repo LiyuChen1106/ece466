@@ -49,3 +49,8 @@ while i<=length(packetsize_p3)
 end
 
 plot(time1,arrival,'r',time2,arrival2,'b',time3,arrival3,'g');
+title('Cumulative arrival function for Ethernet traffic');
+xlabel('time (in microseconds)');
+ylabel('Cumulative arrivals (in bytes)');
+%legend 
+legend('Trace file data', 'Arrivals at traffic sink', 'Arrivals at token bucket');

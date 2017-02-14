@@ -53995,9 +53995,3 @@
 53993	1799766.6	B	14232
 53994	1799800.0	B	10776
 53995	1799833.4	B	512
-average I frame size: 183776
-
-average B frame size: 36093
-
-average P frame size: 111412
-

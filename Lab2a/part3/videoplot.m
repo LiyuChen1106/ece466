@@ -1,7 +1,7 @@
 clc;clear all;
 [index, time_p, type_f, framesize_f, dummy1, dymmy2, dymmy3 ] = textread('movietrace.data', '%f %f %c %f %f %f %f');
 
-figure(1);
+figure(2);
 for i=1:length(index)
     frame(index(i)+1)=framesize_f(i);
 end
@@ -42,4 +42,9 @@ while i<=length(packetsize_p3)
     i=i+1;
 end
 
-plot(time1,arrival1,'b',time2,arrival2,'r',time3,arrival3,'g');
+plot(time1,arrival1,'r',time2,arrival2,'g',time3,arrival3,'b');
+title('Cumulative arrival function for video traffic');
+xlabel('time (in microseconds)');
+ylabel('Cumulative arrivals (in bytes)');
+%legend 
+legend('Trace file data', 'Arrivals at token bucket', 'Arrivals at traffic sink');

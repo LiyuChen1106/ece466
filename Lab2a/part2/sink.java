@@ -5,7 +5,7 @@ public class sink{
 	  PrintStream pout = null;
 	  try{
 		  DatagramSocket socket=new DatagramSocket(4444);
-		  byte [] buf=new byte[2000];
+		  byte [] buf=new byte[200];
 		  DatagramPacket p=new DatagramPacket(buf,buf.length);
 		  
 		  FileOutputStream fout =  new FileOutputStream("sink.txt");

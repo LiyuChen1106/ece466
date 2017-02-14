@@ -10,7 +10,7 @@ arrival(1)=packetsize_p(1);
 time_p=time_p-time_p(1);
 
 i=2;
-while i<125000
+while i<=125000
     time1(i)=time_p(i);
     arrival(i) = arrival(i-1)+packetsize_p(i);
     i=i+1;
@@ -46,12 +46,25 @@ while i<=length(packetsize_p3)
 end
 %subplot(3,1,3);
 %plot(time3,arrival3);
+time1 = time1/1000;
+time2 = time2/1000;
+time3 = time3/1000;
 
 plot(time1,arrival,'r',time2,arrival2,'b',time3,arrival3,'g');
-
+title('Cumulative arrival function for Poisson traffic');
+xlabel('time (in microseconds)');
+ylabel('Cumulative arrivals (in bytes)');
+%legend 
+legend('Trace file data', 'Arrivals at traffic sink', 'Arrivals at token bucket');
 
 figure(2);
 plot(time2,d1,'r',time2,d2,'g');
+axis([min(time2),max(time2),0,11000]);
+title('token number and the buffer backlog function');
+xlabel('time (in microseconds)');
+ylabel('Number of tokens and Backlog');
+%legend 
+legend('Number of tokens', 'Backlog');
 
 
 

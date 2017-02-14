@@ -88,9 +88,9 @@ class ReadFileWriteFile {
                        int Iframe_mean=Iframe_to/Iframeno;
 int Pframe_mean=Pframe_to/Pframeno;
 int Bframe_mean=Bframe_to/Bframeno;
-pout.println("average I frame size: "+Iframe_mean+"\n");
-pout.println("average B frame size: "+Bframe_mean+"\n");
-pout.println("average P frame size: "+Pframe_mean+"\n");
+System.out.println("average I frame size: "+Iframe_mean+"\n");
+System.out.println("average B frame size: "+Bframe_mean+"\n");
+System.out.println("average P frame size: "+Pframe_mean+"\n");
 		} catch (IOException e) {  
 			// catch io errors from FileInputStream or readLine()  
 			System.out.println("IOException: " + e.getMessage());  

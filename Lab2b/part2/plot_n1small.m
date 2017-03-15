@@ -49,7 +49,7 @@ end
 
 
 
-plot(time1,arrival,'r',time2,arrival2,'g',time3,arrival3,'b');
+plot(time3,arrival3,'r',time2,arrival2,'g',time1,arrival,'b');
 title('Cumulative arrival function of the generator, token bucket and sink for case1');
 xlabel('time (in microseconds)');
 ylabel('Cumulative arrivals (in bytes)');

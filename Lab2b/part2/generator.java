@@ -20,8 +20,8 @@ public class generator {
             	PrintStream pout = null;
 
 try{
-	T=204;
-	N=10;
+	T=21;
+	N=1;
 	L=100;
 DatagramSocket socket=new DatagramSocket();
 InetAddress addr=InetAddress.getByName("localhost");

@@ -1,6 +1,6 @@
 clc; clear all;
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket_exp.txt', '%f %f %f %f');
 i=1;
 time2(i)=0;
 buffer(i)=bufferSize(i);
@@ -25,4 +25,7 @@ xlabel('Time (in microseconds)');
 ylabel('Content in token bucket / buffer (in Bytes)');
 %xlim([0,2.1e6]);
 %legend 
-legend('Number of token(s)','Backlog in the buffer');
+legend('Number of token bucket','Backlog in the buffer','Location','northeast');
+
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot_exp_tbbacklog','png');

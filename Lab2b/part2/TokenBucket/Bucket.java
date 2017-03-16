@@ -58,25 +58,19 @@ public class Bucket implements Runnable
 		long current_time = System.nanoTime();
 		long delta_t = current_time - lastTime;
 		
-		noTokens += delta_t/tokenInterval;
-		lastTime = current_time - delta_t%tokenInterval;
-		
-		if (noTokens > size) {
-		    noTokens = size;
-		}
-		//long curnano=System.nanoTime();
-		//long dif_noTokens=(curnano-lastTime)/tokenInterval;
-		//noTokens+=dif_noTokens;
+		long curnano=System.nanoTime();
+		long dif_noTokens=(curnano-lastTime)/tokenInterval;
+		noTokens+=dif_noTokens;
 		
 		
-		//if(noTokens>size){
-		//	lastTime=lastTime+(size-noTokens)*tokenInterval;
-		//	noTokens=size;
+		if(noTokens>size){
+			lastTime=lastTime+(size-noTokens)*tokenInterval;
+			noTokens=size;
 			
-		//}
-		//else{
-		//	lastTime=lastTime+dif_noTokens*tokenInterval;
-		//}
+		}
+		else{
+			lastTime=lastTime+dif_noTokens*tokenInterval;
+		}
 	}
 	
 	/**

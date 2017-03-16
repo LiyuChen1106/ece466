@@ -25,4 +25,7 @@ xlabel('Time (in microseconds)');
 ylabel('Content in token bucket / buffer (in Bytes)');
 %xlim([0,2.1e6]);
 %legend 
-legend('Number of token(s)','Backlog in the buffer');
+legend('Content of token bucket','Backlog in the buffer','Location','northeast');
+
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot_n10small_tbbacklog','png');

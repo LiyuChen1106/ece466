@@ -39,10 +39,12 @@ end
 
 
 plot(time1,arrival,'r',time3,arrival3,'b');
-title('Cumulative arrival function of the trace and output files');
+title('Cumulative arrival function of the trace and output files','Fontsize',12);
 xlabel('time (in microseconds)');
 ylabel('Cumulative arrivals (in bytes)');
 xlim([0,2.1e6]);
 %legend 
-legend('Trace file','Output file');
+legend({'Trace file','Output file'},'Location','northeast');
 
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot1_1','png');

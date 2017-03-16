@@ -1,6 +1,6 @@
 clc; clear all;
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket_near.txt', '%f %f %f %f');
 i=1;
 time2(i)=0;
 buffer(i)=bufferSize(i);
@@ -23,6 +23,10 @@ plot(time2,token,'-r',time2,buffer,'-b');
 title('Content of token bucket and buffer backlog for case3');
 xlabel('Time (in microseconds)');
 ylabel('Content in token bucket / buffer (in Bytes)');
-%xlim([0,2.1e6]);
+ylim([-1,200]);
+xlim([0,5.4e6]);
 %legend 
-legend('Number of token(s)','Backlog in the buffer');
+legend('Content of token bucket','Backlog in the buffer','Location','northeast');
+
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot_near_tbbacklog','png');

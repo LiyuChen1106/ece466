@@ -1,9 +1,9 @@
 2.2 rate(source)<rate_TB
-N=1 L=100 T=50
+N=1 L=100 T=2
 long term rate(source)<rate_TB
-N=10 L=100 T=500
+N=10 L=100 T=20
 rate(source) = rate_TB
-N=1 L=100 T=20.4
+N=1 L=100 T=1.1
 
 2.4
 asumme rate_TB=5000 tokens/second

@@ -20,7 +20,7 @@ public class generator {
             	PrintStream pout = null;
 
 try{
-	T=21;
+	T=800;
 	N=1;
 	L=100;
 DatagramSocket socket=new DatagramSocket();
@@ -49,7 +49,7 @@ while(i<=10000){
      }
 	j=1;
 	curnano=System.nanoTime();
-    while(curnano-firsttime<T*1000000){
+    while(curnano-firsttime<T*1000){
     	curnano=System.nanoTime();
     }
 	

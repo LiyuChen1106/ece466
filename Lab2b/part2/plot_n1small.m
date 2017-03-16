@@ -55,4 +55,7 @@ xlabel('time (in microseconds)');
 ylabel('Cumulative arrivals (in bytes)');
 %xlim([0,2.1e6]);
 %legend 
-legend('Generator','Token bucket','Sink');
+legend('Generator','Token bucket','Sink','Location','northeast');
+
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot_n1small','png');

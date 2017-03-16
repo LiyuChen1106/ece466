@@ -1,6 +1,6 @@
 clc; clear all;
 
-[packet_no_p, time_p, packetsize_p] = textread('generator.txt', '%f %f %f');
+[packet_no_p, time_p, packetsize_p] = textread('generator_exp.txt', '%f %f %f');
 figure(1);
 i=1;
 time1(i)=0;
@@ -18,7 +18,7 @@ end
 %ylabel('Cumulative arrivals (in bytes)');
 %xlim([0,2.1e6]);
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, noToken] = textread('bucket_exp.txt', '%f %f %f %f');
 i=1;
 time2(i)=0;
 arrival2(i)=packetsize_p2(i);
@@ -29,7 +29,7 @@ while i<=length(packetsize_p2)
     i=i+1;
 end
 
-[packet_no_p3, time_p3, packetsize_p3] = textread('sink.txt', '%f %f %f');
+[packet_no_p3, time_p3, packetsize_p3] = textread('sink_exp.txt', '%f %f %f');
 i=1;
 time3(i)=0;
 arrival3(i)=packetsize_p3(i);
@@ -55,4 +55,7 @@ xlabel('time (in microseconds)');
 ylabel('Cumulative arrivals (in bytes)');
 xlim([0,2.1e8]);
 %legend 
-legend('Generator','Token bucket','Sink');
+legend('Generator','Token bucket','Sink','Location','northeast');
+
+set(1,'OuterPosition',[1 1 1060 664]);
+saveas(1,'plot_exp','png');

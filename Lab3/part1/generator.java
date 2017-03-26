@@ -18,7 +18,7 @@ public class generator {
                 int N;
             	ArrayList<DatagramPacket> g=new ArrayList<DatagramPacket>();
 try{
-N=9;
+N=5;
 File fin= new File("poisson3.data");
 DatagramSocket socket=new DatagramSocket();
 FileReader fis = new FileReader(fin);
@@ -64,11 +64,15 @@ for(i=0; i<125000;i++){
 	}
 	while(size_buf[i]>1024){
 byte[] buf= new byte [1024];
+		// set generator
+		buf[0] = (byte)1;
 		DatagramPacket packet=new DatagramPacket(buf,buf.length,addr,4444);
 		socket.send(packet);
 		size_buf[i]=size_buf[i]-1024;
 }
 	byte[] buf= new byte[size_buf[i]];
+	buf[0] = (byte)1;
+
 	DatagramPacket packet=new DatagramPacket(buf,buf.length,addr,4444);
 	socket.send(packet);
         lastnano=System.nanoTime();

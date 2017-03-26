@@ -112,11 +112,16 @@ public class SchedulerSender implements Runnable
 				 * If there is send packet, remove it form queue.
 				 * If there is no packet increase noEmpty that keeps track of number of empty queues 
 				 */
+
 				if ((packet = buffers[0].peek()) != null)
 				{
 					sendPacket(packet, startTime);
 					buffers[0].removePacket();
 				}
+                                else if((packet=buffers[1].peek())!=null){
+                                       sendPacket(packet,startTime);
+                                       buffers[1].removePacket();
+}
 				else
 				{
 					noEmpty++;

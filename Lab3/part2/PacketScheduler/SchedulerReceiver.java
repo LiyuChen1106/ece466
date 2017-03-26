@@ -82,10 +82,18 @@ public class SchedulerReceiver implements Runnable
 				 */
 				
 				// add packet to a queue if there is enough space
+                                byte value=packet.getData()[0];
+                                 
+                                if(value==(byte) 2){
 				if (buffers[0].addPacket(new DatagramPacket(packet.getData(), packet.getLength())) < 0)
 				{
-					System.err.println("Packet dropped (queue full).");
-				}
+					System.err.println("Packet dropped (high priority queue full).");
+				}}
+                                  else if(value== (byte) 1){
+                                if(buffers[1].addPacket(new DatagramPacket(packet.getData(),packet.getLength()))<0){
+                                   System.err.println("Packet dropped (low priority queue full) .");                                
+}
+}
 				/*
 				 * TODO: 
 				 * Replace previous command with code that:

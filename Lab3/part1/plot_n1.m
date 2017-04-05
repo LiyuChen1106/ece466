@@ -1,6 +1,6 @@
 clc; clear all;
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('ps_n1.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, bufferSize0] = textread('ps_n1.txt', '%f %f %f %f');
 
 i=1;
 time2(i)=0;
@@ -23,7 +23,7 @@ title('Backlog in the buffer (N=1)');
 xlabel('Time (in microseconds)');
 ylabel('Content in buffer (in Bytes)');
 %ylim([-1,200]);
-%xlim([0,5.4e6]);
+xlim([0,9e6]);
 %legend 
 %legend('Backlog in the buffer (N=1)','Location','northeast');
 
@@ -74,7 +74,7 @@ title('Waiting time (N=1)');
 xlabel('Time (in microseconds)');
 ylabel('Waiting time (in microseconds)');
 %ylim([-1,200]);
-%xlim([0,5.4e6]);
+xlim([0,9e6]);
 %legend 
 %legend('Backlog in the buffer (N=1)','Location','northeast');
 
@@ -97,7 +97,7 @@ title('Number of Discarded packets (N=1)');
 xlabel('Time (in microseconds)');
 ylabel('Total discarded packets');
 %ylim([-1,200]);
-%xlim([0,5.4e6]);
+xlim([0,9e6]);
 %legend 
 %legend('Backlog in the buffer (N=1)','Location','northeast');
 

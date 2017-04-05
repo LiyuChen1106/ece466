@@ -25,7 +25,7 @@ FileReader fis = new FileReader(fin);
 bis = new BufferedReader(fis);
 InetAddress addr=InetAddress.getByName("localhost");
 
-FileOutputStream fout =  new FileOutputStream("generator.txt");
+FileOutputStream fout =  new FileOutputStream("generator_pos.txt");
 pout = new PrintStream (fout);
 int i=0;
 while((currentLine=bis.readLine())!=null){

@@ -1,6 +1,6 @@
 clc; clear all;
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('ps_n9.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, bufferSize0] = textread('ps_n9.txt', '%f %f %f %f');
 
 i=1;
 time2(i)=0;

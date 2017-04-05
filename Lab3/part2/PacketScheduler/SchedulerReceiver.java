@@ -74,7 +74,7 @@ public class SchedulerReceiver implements Runnable
 					long bufferSize = buffers[i].getSizeInBytes();
 					pOut.print(bufferSize + "\t");
 				}
-				pOut.println();
+				//pOut.println();
 				previsuTime = startTime;
 				
 				/*
@@ -85,15 +85,20 @@ public class SchedulerReceiver implements Runnable
                                 byte value=packet.getData()[0];
                                  
                                 if(value==(byte) 2){
-				if (buffers[0].addPacket(new DatagramPacket(packet.getData(), packet.getLength())) < 0)
-				{
+					pOut.print(2);
+				if (buffers[0].addPacket(new DatagramPacket(packet.getData(), packet.getLength())) < 0){
+					
 					System.err.println("Packet dropped (high priority queue full).");
-				}}
+				}
+				}
                                   else if(value== (byte) 1){
+					  pOut.print(1);
+
                                 if(buffers[1].addPacket(new DatagramPacket(packet.getData(),packet.getLength()))<0){
-                                   System.err.println("Packet dropped (low priority queue full) .");                                
-}
-}
+					   System.err.println("Packet dropped (low priority queue full) .");                                
+				}
+				}
+				  pOut.println();
 				/*
 				 * TODO: 
 				 * Replace previous command with code that:

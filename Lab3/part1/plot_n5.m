@@ -1,6 +1,6 @@
 clc; clear all;
 
-[time_p2, packetsize_p2, bufferSize, noToken] = textread('ps_n5.txt', '%f %f %f %f');
+[time_p2, packetsize_p2, bufferSize, bufferSize0] = textread('ps_n5.txt', '%f %f %f %f');
 
 i=1;
 time2(i)=0;
@@ -27,7 +27,7 @@ xlim([0,12e6]);
 %legend 
 %legend('Backlog in the buffer (N=1)','Location','northeast');
 
-set(figure(1),'OuterPosition',[1 1 1060 664]);
+set(figure(1),'OuterPosition',[1 1 850 664]);
 saveas(figure(1),'plot_n5_backlog','png');
 
 
@@ -101,5 +101,5 @@ ylabel('Total discarded packets');
 %legend 
 %legend('Backlog in the buffer (N=1)','Location','northeast');
 
-set(fig3,'OuterPosition',[1 1 1060 664]);
+set(fig3,'OuterPosition',[1 1 1000 664]);
 saveas(fig3,'plot_n5_discard','png');

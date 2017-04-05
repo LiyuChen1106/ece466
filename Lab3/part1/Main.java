@@ -15,7 +15,7 @@ public static void main(String[] args)
 * Arrivals of packets are recorded to file ps.txt.
 */
 PacketScheduler ps = new PacketScheduler(4444,
- "localhost", 4445, 10485760, 1, 2024,
+ "localhost", 4445, 10485760, 1, 1024,
 new long [] {100*1024}, "ps.txt");
 // start packet scheduler
 new Thread(ps).start();
